@@ -97,22 +97,6 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-  input, button {
-    outline: none; 
-    border: none;
-    background-color: transparent;
-  }
-  button {
-    cursor: pointer;
-    padding: 0;
-  }
-  input {
-    appearance: none;
-    
-    &:focus {
-      outline: none;
-    }
-  }
 
   @font-face {
     font-family: 'GmarketSansMedium';
