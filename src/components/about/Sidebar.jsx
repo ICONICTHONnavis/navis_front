@@ -29,7 +29,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="flex flex-col w-[100px] h-[913px] rounded-[20px] bg-brown-300/30 p-[18px] shadow-sideBar">
+    <div className="flex flex-col w-[100px] h-[813px] rounded-[20px] bg-brown-300/30 p-[18px] shadow-sideBar ml-[32px]">
       <img src={acoFace} alt="아코 얼굴" />
       <div className="flex flex-col gap-3 mt-[67px]">
         {buttons.map((button, index) => (

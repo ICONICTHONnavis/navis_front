@@ -1,9 +1,10 @@
 import React from 'react';
+import NonFileChart from '../../components/chart/NonFileChart';
 
 function Chart() {
   return (
-    <div className="h-screen">
-      <p>Chart</p>
+    <div className="w-screen h-screen flex justify-center items-center">
+      <NonFileChart />
     </div>
   );
 }
