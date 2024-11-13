@@ -19,11 +19,14 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
+        essentialLinear:
+          'linear-gradient(180deg, rgba(249, 234, 216, 0.40) 0%, rgba(249, 234, 216, 0.10) 100%)',
         login: "url('/src/assets/images/backgroundImg.svg')",
       },
       boxShadow: {
         sideBar: '0px 4px 10px 0px rgba(0, 0, 0, 0.10)',
         uploadButton: '0px 4px 4px 0px rgba(0, 0, 0, 0.10)',
+        classDiv: '0px 2px 4px 0px rgba(0, 0, 0, 0.10)',
       },
     },
   },

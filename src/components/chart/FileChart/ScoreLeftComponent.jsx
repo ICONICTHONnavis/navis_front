@@ -1,5 +1,5 @@
 import React from 'react';
-import SmallChart from '../SmallChart';
+import SmallChart from '../Chart/SmallChart';
 
 const ScoreLeftComponent = () => {
   const scoreArr = ['공통 교양', '일반 교양', '전공'];

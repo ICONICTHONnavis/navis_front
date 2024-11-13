@@ -20,11 +20,9 @@ const Layout = () => {
 
   return (
     <Wrapper>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row">
         {showSidebar && <Sidebar />}
-        <div className="flex-1">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </Wrapper>
   );

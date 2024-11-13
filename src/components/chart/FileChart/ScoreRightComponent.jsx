@@ -1,5 +1,5 @@
 import React from 'react';
-import BigChart from '../BigChart';
+import BigChart from '../Chart/BigChart';
 
 const ScoreRightComponent = () => {
   return (

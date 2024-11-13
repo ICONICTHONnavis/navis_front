@@ -3,7 +3,7 @@ import FileChart from '../../components/chart/FileChart';
 
 function Chart() {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex ml-[76px] mt-[75px]">
       <FileChart />
     </div>
   );
