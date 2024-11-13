@@ -6,11 +6,12 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Chart from './pages/chart/Chart';
 import Chatting from './pages/chatting/Chatting';
+import RootLayout from './layout/rootLayout';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <RootLayout />,
     children: [
       {
         path: '',

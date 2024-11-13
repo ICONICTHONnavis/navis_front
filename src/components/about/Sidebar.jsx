@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import acoFace from '../../assets/images/aco_face.svg';
 import home from '../../assets/images/home.svg';
 import homeActive from '../../assets/images/home_active.svg';
@@ -9,14 +10,21 @@ import chatActive from '../../assets/images/chat_active.svg';
 import table from '../../assets/images/table.svg';
 import tableActive from '../../assets/images/table_active.svg';
 import SidebarButton from './SidebarButton';
-import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [activeButton, setActiveButton] = useState(null);
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const handleButtonClick = (index, path) => {
-    setActiveButton(index);
+  const buttons = [
+    { name: '홈', path: '/', icon: home, activeIcon: homeActive },
+    { name: '차트', path: '/chart', icon: chart, activeIcon: chartActive },
+    { name: '테이블', path: '/table', icon: table, activeIcon: tableActive },
+    { name: '채팅', path: '/chatting', icon: chat, activeIcon: chatActive },
+  ];
+
+  const activeButtonIndex = buttons.findIndex(button => button.path === location.pathname);
+
+  const handleButtonClick = path => {
     navigate(path);
   };
 
@@ -24,30 +32,15 @@ const Sidebar = () => {
     <div className="flex flex-col w-[100px] h-[913px] rounded-[20px] bg-brown-300/30 p-[18px] shadow-sideBar">
       <img src={acoFace} alt="아코 얼굴" />
       <div className="flex flex-col gap-3 mt-[67px]">
-        <SidebarButton
-          name="홈"
-          icon={activeButton === 0 ? homeActive : home}
-          isActive={activeButton === 0}
-          onClick={() => handleButtonClick(0, '/')}
-        />
-        <SidebarButton
-          name="차트"
-          icon={activeButton === 1 ? chartActive : chart}
-          isActive={activeButton === 1}
-          onClick={() => handleButtonClick(1, '/chart')}
-        />
-        <SidebarButton
-          name="테이블"
-          icon={activeButton === 2 ? tableActive : table}
-          isActive={activeButton === 2}
-          onClick={() => handleButtonClick(2, '/table')}
-        />
-        <SidebarButton
-          name="채팅"
-          icon={activeButton === 3 ? chatActive : chat}
-          isActive={activeButton === 3}
-          onClick={() => handleButtonClick(3, '/chatting')}
-        />
+        {buttons.map((button, index) => (
+          <SidebarButton
+            key={index}
+            name={button.name}
+            icon={activeButtonIndex === index ? button.activeIcon : button.icon}
+            isActive={activeButtonIndex === index}
+            onClick={() => handleButtonClick(button.path)}
+          />
+        ))}
       </div>
       <button />
     </div>
