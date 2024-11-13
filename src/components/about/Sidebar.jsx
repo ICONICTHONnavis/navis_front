@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import acoFace from '../../assets/images/aco_face.svg';
 import home from '../../assets/images/home.svg';
