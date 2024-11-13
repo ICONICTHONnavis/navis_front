@@ -24,9 +24,10 @@ module.exports = {
         login: "url('/src/assets/images/backgroundImg.svg')",
       },
       boxShadow: {
-        sideBar: '0px 4px 10px 0px rgba(0, 0, 0, 0.10)',
+        sideBar: '0px 4px 10px 0px rgba(0, 0, 0, 0.10)',<<<<<<< feature/5-chart
         uploadButton: '0px 4px 4px 0px rgba(0, 0, 0, 0.10)',
         classDiv: '0px 2px 4px 0px rgba(0, 0, 0, 0.10)',
+
       },
     },
   },
