@@ -1,8 +1,10 @@
+import React from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import Sidebar from './components/about/Sidebar.jsx';
 import { styled, ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './style/globalStyle';
 import { theme } from './style/theme.js';
 import './App.css';
-import { Outlet } from 'react-router-dom';
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -13,23 +15,27 @@ const Wrapper = styled.div`
 `;
 
 const Layout = () => {
+  const location = useLocation();
+  const showSidebar = location.pathname === '/chart' || location.pathname === '/chatting';
+
   return (
-    <>
-      <Wrapper>
-        <Outlet />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <div style={{ display: 'flex' }}>
+        {showSidebar && <Sidebar />}
+        <div style={{ flex: 1 }}>
+          <Outlet />
+        </div>
+      </div>
+    </Wrapper>
   );
 };
 
 function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Layout />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout />
+    </ThemeProvider>
   );
 }
 
