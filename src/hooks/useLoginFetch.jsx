@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { defaultInstance } from '../api/instance';
-import { useSetRecoilState } from 'recoil';
-import { authState } from '../recoil/user/authState';
 
 const useLoginFetch = () => {
   const [loginValue, setLoginValue] = useState({ id: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const setAuth = useSetRecoilState(authState);
 
   const handleChangeInput = (name, value) => {
     setLoginValue(preValues => ({
@@ -36,7 +33,7 @@ const useLoginFetch = () => {
       });
 
       if (response.data && response.data.responseDto) {
-        setAuth(response.data.responseDto);
+        localStorage.setItem('auth', JSON.stringify(response.data.responseDto));
       } else {
         console.error('응답 형식이 잘못되었습니다');
         throw new Error('응답 형식이 잘못되었습니다');
@@ -48,6 +45,7 @@ const useLoginFetch = () => {
       setLoading(false);
     }
   };
+
   return { loginValue, getTextInputProps, login, loading, error };
 };
 
