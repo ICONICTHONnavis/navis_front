@@ -1,10 +1,10 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 
-const SmallChart = ({ label }) => {
+const SmallChart = ({ label, total, complete }) => {
   const data = [
-    { id: '수강 학점', value: 12 },
-    { id: '남은 학점', value: 33 },
+    { id: '수강 학점', value: complete },
+    { id: '남은 학점', value: total - complete },
   ];
 
   return (
@@ -25,8 +25,8 @@ const SmallChart = ({ label }) => {
       />
       <div className="absolute flex flex-col items-center top-[95px]">
         <div className="flex flex-row gap-1">
-          <p className="text-4xl font-semibold">12</p>
-          <p className="text-lg font-semibold">/45</p>
+          <p className="text-4xl font-semibold">{complete}</p>
+          <p className="text-lg font-semibold">/{total}</p>
         </div>
         <p className="text-lg text-gray mt-[-6px]">학점</p>
       </div>
