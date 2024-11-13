@@ -20,11 +20,9 @@ const Layout = () => {
 
   return (
     <Wrapper>
-      <div style={{ display: 'flex' }}>
+      <div className="flex flex-row">
         {showSidebar && <Sidebar />}
-        <div style={{ flex: 1 }}>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </Wrapper>
   );

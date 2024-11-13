@@ -1,9 +1,10 @@
 import React from 'react';
+import FileChart from '../../components/chart/FileChart';
 
 function Chart() {
   return (
-    <div className="h-screen">
-      <p>Chart</p>
+    <div className="flex ml-[76px] mt-[75px]">
+      <FileChart />
     </div>
   );
 }
