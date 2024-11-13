@@ -28,7 +28,7 @@ const SmallChart = ({ label }) => {
           <p className="text-4xl font-semibold">12</p>
           <p className="text-lg font-semibold">/45</p>
         </div>
-        <p className="text-lg text-gray">학점</p>
+        <p className="text-lg text-gray mt-[-6px]">학점</p> {/* mt-1로 위쪽 여백을 줄임 */}
       </div>
     </div>
   );
