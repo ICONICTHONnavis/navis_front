@@ -10,7 +10,7 @@ const ScoreRightComponent = () => {
         <p className="text-[26px] font-semibold text-lightGreen">98학점</p>
       </div>
       <BigChart />
-      <div className="absolute flex flex-col items-center top-[170px]">
+      <div className="absolute flex flex-col items-center top-[165px]">
         <div className="flex flex-row gap-1">
           <p className="text-[50px] font-semibold">98</p>
           <p className="text-[32px] font-semibold mt-1">/130</p>

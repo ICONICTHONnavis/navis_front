@@ -23,12 +23,12 @@ const SmallChart = ({ label }) => {
         enableArcLinkLabels={false}
         enableArcLabels={false}
       />
-      <div className="absolute flex flex-col items-center top-[93px]">
+      <div className="absolute flex flex-col items-center top-[95px]">
         <div className="flex flex-row gap-1">
           <p className="text-4xl font-semibold">12</p>
           <p className="text-lg font-semibold">/45</p>
         </div>
-        <p className="text-lg text-gray mt-[-6px]">학점</p> {/* mt-1로 위쪽 여백을 줄임 */}
+        <p className="text-lg text-gray mt-[-6px]">학점</p>
       </div>
     </div>
   );
