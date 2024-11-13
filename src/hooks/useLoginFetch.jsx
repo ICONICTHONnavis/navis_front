@@ -32,7 +32,12 @@ const useLoginFetch = () => {
         password: loginValue.password,
       });
 
-      console.log('로그인 성공:', response.data);
+      if (response.data && response.data.responseDto) {
+        localStorage.setItem('auth', JSON.stringify(response.data.responseDto));
+      } else {
+        console.error('응답 형식이 잘못되었습니다');
+        throw new Error('응답 형식이 잘못되었습니다');
+      }
     } catch (err) {
       setError(err.response ? err.response.data : '로그인 실패');
       console.error('로그인 실패:', err);

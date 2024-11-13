@@ -1,10 +1,10 @@
 import { ResponsivePie } from '@nivo/pie';
 import React from 'react';
 
-const BigChart = () => {
+const BigChart = ({ totalScore }) => {
   const data = [
-    { id: '수강 학점', value: 98 },
-    { id: '남은 학점', value: 32 },
+    { id: '수강 학점', value: totalScore.complete },
+    { id: '남은 학점', value: totalScore.total - totalScore.complete },
   ];
 
   return (
