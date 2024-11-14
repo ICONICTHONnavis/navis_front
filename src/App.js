@@ -4,7 +4,8 @@ import Sidebar from './components/about/Sidebar.jsx';
 import { styled, ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './style/globalStyle';
 import { theme } from './style/theme.js';
-import { RecoilRoot } from 'recoil';
+import { AuthProvider } from './context/AuthContext.js';
+
 import './App.css';
 
 const Wrapper = styled.div`
@@ -34,12 +35,12 @@ const Layout = () => {
 
 function App() {
   return (
-    <RecoilRoot>
+    <AuthProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Layout />
       </ThemeProvider>
-    </RecoilRoot>
+    </AuthProvider>
   );
 }
 

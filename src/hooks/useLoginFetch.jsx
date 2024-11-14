@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { defaultInstance } from '../api/instance';
+import { useAuth } from '../context/AuthContext';
 
 const useLoginFetch = () => {
+  const { setIsLogin } = useAuth();
   const [loginValue, setLoginValue] = useState({ id: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -33,15 +35,16 @@ const useLoginFetch = () => {
       });
 
       if (response.data && response.data.responseDto) {
+        setIsLogin(true);
         localStorage.setItem('auth', JSON.stringify(response.data.responseDto));
-        return true; // 로그인 성공 시 true 반환
+        return true;
       } else {
         throw new Error('응답 형식이 잘못되었습니다');
       }
     } catch (err) {
       setError(err.response ? err.response.data : '로그인 실패');
       console.error('로그인 실패:', err);
-      return false; // 로그인 실패 시 false 반환
+      return false;
     } finally {
       setLoading(false);
     }
