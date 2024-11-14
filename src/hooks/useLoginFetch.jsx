@@ -32,6 +32,8 @@ const useLoginFetch = () => {
         password: loginValue.password,
       });
 
+      console.log(response.data);
+
       if (response.data && response.data.responseDto) {
         localStorage.setItem('auth', JSON.stringify(response.data.responseDto));
       } else {

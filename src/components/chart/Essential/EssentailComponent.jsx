@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import EssentialList from './EssentialList';
+import useRequireFetch from '../../../hooks/useRequireFetc';
 
 const EssentailComponent = () => {
+  const { requireInfo, getRequireInfo, loading } = useRequireFetch();
+
+  useEffect(() => {
+    getRequireInfo();
+  }, []);
+
+  useEffect(() => {
+    console.log(requireInfo);
+  }, [requireInfo]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="flex flex-col w-[1187px] px-[45px] py-[33px] rounded-[20px] bg-essentialLinear gap-[35px]">
       <p className="text-brown-500 text-[40px] font-bold tracking-[-2px]">필수 과목 이수체계도</p>

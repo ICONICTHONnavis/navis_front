@@ -7,8 +7,9 @@ const useFileFetch = () => {
   const [error, setError] = useState(null);
   const auth = JSON.parse(localStorage.getItem('auth')) || {};
 
-  const handleFileChange = event => {
-    setSelectedFile(event.target.files[0]);
+  const handleFileChange = file => {
+    console.log('선택된 파일:', file);
+    setSelectedFile(file);
   };
 
   const uploadFile = async () => {
@@ -23,13 +24,15 @@ const useFileFetch = () => {
     try {
       const formData = new FormData();
       formData.append('file', selectedFile);
-      formData.append('excelFileRequestDto', auth.studentNumber);
+      formData.append('studentNumber', auth.studentNumber);
 
       const response = await defaultInstance.post('/akoMain/uploadEx', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
+
+      console.log(response.data);
 
       if (response.status === 200) {
         console.log('파일 업로드 성공');
