@@ -17,7 +17,7 @@ const ScoreLeftComponent = ({ scoreValue }) => {
           complete: scoreValue.completedCredits?.common || 0,
         },
         {
-          label: '일반 교양',
+          label: '지정 교양',
           total: graduateRequirements.generalCredits || 0,
           complete: scoreValue.completedCredits?.general || 0,
         },
