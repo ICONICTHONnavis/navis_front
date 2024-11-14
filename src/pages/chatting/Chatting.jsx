@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as S from './Chatting.styles';
 import { useRecoilValue } from 'recoil';
 import ChattingMain from '../../components/chatting/ChattingMain';
@@ -18,14 +18,14 @@ function Chatting() {
   }
 
   return (
-    <S.container>
+    <S.Container>
       {messages.length === 0 ? (
         <ChattingMain /> // messages가 비어 있을 때 ChattingMain 컴포넌트 렌더링
       ) : (
         <ChattingMessages />
       )}
       <ChattingInput />
-    </S.container>
+    </S.Container>
   );
 }
 

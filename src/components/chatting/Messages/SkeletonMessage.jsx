@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './SkeletoneMessage.styles';
+import * as S from './SkeletonMessage.styles';
 
 function SkeletonMessage() {
   return (
