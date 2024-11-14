@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import EssentialList from './EssentialList';
-import useRequireFetch from '../../../hooks/useRequireFetc';
+import useRequireFetch from '../../../hooks/useRequireFetch';
 
 const EssentailComponent = () => {
   const { requireInfo, getRequireInfo, loading } = useRequireFetch();
