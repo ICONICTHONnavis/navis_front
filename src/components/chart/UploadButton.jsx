@@ -9,7 +9,7 @@ const UploadButton = ({ onFileSelect }) => {
   };
 
   return (
-    <label className="w-[151px] h-[50px] rounded-[20px] bg-brown-100/60 flex items-center justify-center cursor-pointer shadow-uploadButton">
+    <label className="w-[135px] h-[50px] rounded-[20px] bg-brown-100/60 flex items-center justify-center cursor-pointer shadow-uploadButton">
       <input type="file" className="hidden" accept=".xls,.xlsx,.xlsm" onChange={handleFileChange} />
       <img src={file} alt="파일 아이콘" />
       <p className="font-semibold text-xl text-[#ffff] text-center tracking-[-2.1px] ml-[5px]">

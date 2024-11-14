@@ -3,8 +3,8 @@ import { ResponsivePie } from '@nivo/pie';
 
 const SmallChart = ({ label, total, complete }) => {
   const data = [
-    { id: '수강 학점', value: complete },
-    { id: '남은 학점', value: total - complete },
+    { id: '수강 학점', value: complete ? complete : 0 },
+    { id: '남은 학점', value: total - complete ? total - complete : 0 },
   ];
 
   return (

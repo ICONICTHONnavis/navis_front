@@ -1,16 +1,21 @@
 import React from 'react';
-import * as S from './Main.styles';
-import { useRecoilValue } from 'recoil';
-import { authState } from '../../recoil/user/authState';
+import acoHeart from '../../assets/images/aco_heart.svg';
+import ChatButton from '../../components/main/ChatButton';
+import CustomButton from '../../components/main/CustomButton';
 
 function Main() {
-  const auth = useRecoilValue(authState);
   return (
-    <S.MainWrapper>
-      <S.MainTitle>대충 몸통임</S.MainTitle>
-      <S.MainDescription>{auth.studentName}</S.MainDescription>
-      <a href="/chart">이동</a>
-    </S.MainWrapper>
+    <div className="flex flex-col w-screen h-screen justify-center items-center">
+      <div className="flex flex-col items-center gap-[38px]">
+        <p className="text-[80px] tracking-[-1.6px]">Hello, NAVIS</p>
+        <img src={acoHeart} alt="아코_하트" />
+        <ChatButton />
+        <div className="flex flex-row gap-[87px] justify-center items-center">
+          <CustomButton label />
+          <CustomButton />
+        </div>
+      </div>
+    </div>
   );
 }
 
