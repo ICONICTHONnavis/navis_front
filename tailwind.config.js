@@ -9,6 +9,7 @@ module.exports = {
         300: '#F9EAD8',
         400: '#67574B',
         500: '#664944',
+        600: '#E4C3A2',
       },
       chart: {
         skyblue: '#C3DDF7',

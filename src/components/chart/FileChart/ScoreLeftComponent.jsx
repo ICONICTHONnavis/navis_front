@@ -13,18 +13,18 @@ const ScoreLeftComponent = ({ scoreValue }) => {
     ? [
         {
           label: '공통 교양',
-          total: graduateRequirements.commonCredits,
-          complete: scoreValue.completedCredits.common,
+          total: graduateRequirements.commonCredits || 0,
+          complete: scoreValue.completedCredits?.common || 0,
         },
         {
           label: '일반 교양',
-          total: graduateRequirements.generalCredits,
-          complete: scoreValue.completedCredits.general,
+          total: graduateRequirements.generalCredits || 0,
+          complete: scoreValue.completedCredits?.general || 0,
         },
         {
           label: '전공',
-          total: graduateRequirements.majorCredits,
-          complete: scoreValue.completedCredits.major,
+          total: graduateRequirements.majorCredits || 0,
+          complete: scoreValue.completedCredits?.major || 0,
         },
       ]
     : [];

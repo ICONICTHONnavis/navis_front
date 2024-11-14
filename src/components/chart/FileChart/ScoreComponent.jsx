@@ -20,7 +20,7 @@ const ScoreComponent = ({ scoreValue }) => {
       <ScoreLeftComponent scoreValue={scoreValue} />
       <ScoreRightComponent scoreValue={scoreValue} />
       <div className="absolute bottom-0 right-0">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-row gap-5">
           <UploadButton onFileSelect={handleFileSelect} />
           <button
             onClick={handleSubmit}

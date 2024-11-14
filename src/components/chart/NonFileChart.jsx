@@ -22,7 +22,7 @@ const NonFileChart = () => {
   return (
     <div className="flex flex-col gap-[44px] justify-center items-center">
       <img src={acoMent} alt="아코_파일" />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-row gap-5">
         <UploadButton onFileSelect={handleFileSelect} />
         <button
           onClick={handleSubmit}
