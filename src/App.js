@@ -7,6 +7,7 @@ import { theme } from './style/theme.js';
 import { AuthProvider } from './context/AuthContext.js';
 
 import './App.css';
+import { RecoilRoot } from 'recoil';
 
 const Wrapper = styled.div`
   margin: 0 auto;
