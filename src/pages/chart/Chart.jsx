@@ -19,7 +19,7 @@ function Chart() {
   }
 
   return (
-    <div className="flex ml-[76px] mt-[75px]">
+    <div className="flex w-screen h-screen justify-center mt-[75px]">
       {error ? <NonFileChart /> : <FileChart scoreValue={scoreValue} />}
     </div>
   );
