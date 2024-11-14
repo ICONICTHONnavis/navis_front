@@ -6,6 +6,7 @@ import Signup from './pages/signup/Signup';
 import Chart from './pages/chart/Chart';
 import Chatting from './pages/chatting/Chatting';
 import App from './App';
+import Table from './pages/Table/Table';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/chart',
         element: <Chart />,
+      },
+      {
+        path: '/table',
+        element: <Table />,
       },
       {
         path: '/chatting',

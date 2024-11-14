@@ -17,7 +17,10 @@ const Wrapper = styled.div`
 
 const Layout = () => {
   const location = useLocation();
-  const showSidebar = location.pathname === '/chart' || location.pathname === '/chatting';
+  const showSidebar =
+    location.pathname === '/chart' ||
+    location.pathname === '/chatting' ||
+    location.pathname === '/table';
 
   return (
     <Wrapper>
