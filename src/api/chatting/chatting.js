@@ -5,10 +5,9 @@ import { messageState } from '../../recoil/chatting/chattingRecoilState';
 
 export const useChattingHooks = () => {
   const setChatList = useSetRecoilState(messageState);
+  const auth = JSON.parse(localStorage.getItem('auth'));
+  const studentNumber = auth ? auth.studentNumber : '';
   const getChatList = async () => {
-    const auth = JSON.parse(localStorage.getItem('auth'));
-    const studentNumber = auth ? auth.studentNumber : '';
-
     const response = await sendRequest(defaultInstance, 'get', `chat/${studentNumber}`);
 
     setChatList(response.data.responseDto);
@@ -17,7 +16,7 @@ export const useChattingHooks = () => {
   };
   const fetchChattingAnswer = async messageQuestion => {
     const response = await sendRequest(aiChatInstance, 'post', `chat/question`, {
-      studentNumber: 2020112030,
+      studentNumber: studentNumber,
       chattingQuestion: messageQuestion,
     });
 

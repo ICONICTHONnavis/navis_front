@@ -1,18 +1,31 @@
-import { useSetRecoilState } from 'recoil';
-import { exampleState } from '../../recoil/user/userRecoilState';
 import { sendRequest } from '../request';
-import { exampleInstance } from '../instance';
+import { defaultInstance } from '../instance';
 
-export const useExampleHook = () => {
-  const setExampleState = useSetRecoilState(exampleState);
-  const exampleGet = async exampleData => {
-    const response = await sendRequest(exampleInstance, 'get', '/', exampleData);
-    setExampleState(response.data);
-    //return 은 단지 잘 왔나 확인할 때 쓰는 용도 안 쓸 때도 있음
+export const useUserHook = () => {
+  const signUpUser = async formData => {
+    const response = await sendRequest(defaultInstance, 'post', '/signup', {
+      major: formData.major,
+      studentNumber: formData.studentNumber,
+      password: formData.userPassword,
+      studentName: formData.userName,
+    });
+
     return response;
   };
 
+  const checkId = async studentNumber => {
+    try {
+      const response = await sendRequest(defaultInstance, 'post', '/duplicate', {
+        studentNumber: studentNumber,
+      });
+      return { success: true, data: response };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
   return {
-    exampleGet,
+    signUpUser,
+    checkId,
   };
 };

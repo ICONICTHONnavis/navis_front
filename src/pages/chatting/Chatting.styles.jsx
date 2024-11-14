@@ -1,6 +1,7 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
+import backgroundImage from '../../assets/images/aco_heart.svg';
 
-export const container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -8,4 +9,8 @@ export const container = styled.div`
   overflow-y: hidden;
   margin-top: 2vh;
   height: 98vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url(${backgroundImage});
+  background-repeat: no-repeat;
+  background-position: center;
 `;
