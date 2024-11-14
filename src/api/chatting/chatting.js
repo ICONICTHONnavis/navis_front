@@ -23,8 +23,17 @@ export const useChattingHooks = () => {
     return response;
   };
 
+  const recommendSubject = async () => {
+    const response = await sendRequest(aiChatInstance, 'post', `/subject/recommend`, {
+      studentNumber: studentNumber,
+    });
+
+    return response;
+  };
+
   return {
     fetchChattingAnswer,
     getChatList,
+    recommendSubject,
   };
 };
