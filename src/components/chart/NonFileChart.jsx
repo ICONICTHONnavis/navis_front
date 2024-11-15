@@ -2,11 +2,10 @@ import React from 'react';
 import acoMent from '../../assets/images/aco_ment.svg';
 import UploadButton from './UploadButton';
 import useFileFetch from '../../hooks/useFileFetch';
-import useScoreFetch from '../../hooks/useScoreFetch';
 
-const NonFileChart = () => {
+const NonFileChart = ({ setRefresh }) => {
+  // setRefresh를 props로 받음
   const { uploadFile, handleFileChange, selectedFile, error } = useFileFetch();
-  const { getScoreInfo } = useScoreFetch();
 
   const handleFileSelect = file => {
     handleFileChange(file);
@@ -14,8 +13,8 @@ const NonFileChart = () => {
 
   const handleSubmit = async () => {
     const uploadSuccess = await uploadFile();
-    if (!error && uploadSuccess) {
-      getScoreInfo();
+    if (uploadSuccess && !error) {
+      setRefresh(prev => !prev); // refresh 상태 변경
     }
   };
 
