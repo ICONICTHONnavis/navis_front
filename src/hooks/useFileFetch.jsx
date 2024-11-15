@@ -15,7 +15,7 @@ const useFileFetch = () => {
   const uploadFile = async () => {
     if (!selectedFile) {
       alert('업로드할 파일을 선택해 주세요.');
-      return;
+      return false; // 업로드 실패
     }
 
     setLoading(true);
@@ -36,6 +36,7 @@ const useFileFetch = () => {
 
       if (response.status === 200) {
         console.log('파일 업로드 성공');
+        return true; // 업로드 성공
       } else {
         console.log('서버 오류가 발생했습니다');
       }
@@ -45,6 +46,7 @@ const useFileFetch = () => {
     } finally {
       setLoading(false);
     }
+    return false; // 업로드 결과가 실패
   };
 
   return { selectedFile, handleFileChange, uploadFile, loading, error };
