@@ -26,9 +26,9 @@ export const SkeletonMessage = styled.div`
 export const SkeletonText = styled.div`
   margin-top: 12px;
   display: block;
-  width: 100%;
+  width: 80%;
   height: 1rem;
-  background: linear-gradient(90deg, var(--color-gray3), var(--color-gray4));
+  background: linear-gradient(90deg, #f8e8d5, #f4e0c8, #f8e8d5);
   background-size: 200% 100%;
   animation: ${loadingAnimation} 2s infinite;
   border-radius: 4px;

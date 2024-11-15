@@ -39,7 +39,7 @@ export const Message = styled.div`
   align-items: center;
   flex-shrink: 0;
   border-radius: 20px;
-  background-color: var(--color-gray2);
+  background-color: #ffcc80;
   color: var(--gray-8);
   padding: 10px 15px;
   width: auto;
@@ -54,7 +54,7 @@ export const SendMessage = styled.div`
   flex-direction: column;
   align-items: flex-end;
   align-self: stretch;
-  margin: 0;
+  margin-bottom: 20px;
 `;
 
 export const PromaChattingProfile = styled.div`
@@ -73,13 +73,19 @@ export const ReceiveMessage = styled.div`
   margin: 30px 0;
 `;
 
-export const ReceiveMessageText = styled.div`
-  margin-top: 12px;
-  overflow-wrap: break-word;
-  white-space: pre-wrap;
-  word-break: break-word;
-  width: 100%;
-  box-sizing: border-box;
-  flex-grow: 1;
-  line-height: 22px;
+export const ReceiveMessageText = styled(Message)`
+  width: auto;
+  background-color: #f8e8d5;
+  position: relative;
+  color: #000;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f8e8d5 transparent transparent transparent;
+  }
 `;

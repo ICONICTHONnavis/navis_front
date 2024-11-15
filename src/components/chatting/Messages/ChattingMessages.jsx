@@ -42,9 +42,8 @@ function ChattingMessages() {
           <S.PromaChattingProfile>
             <img src={navisChattingProfile} alt="navis profile" />
           </S.PromaChattingProfile>
-          <S.ReceiveMessageText>
-            <SkeletonMessage />
-          </S.ReceiveMessageText>
+
+          <SkeletonMessage />
         </S.ReceiveMessage>
       )}
       <div ref={messagesEndRef} />

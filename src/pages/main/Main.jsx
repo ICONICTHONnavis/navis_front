@@ -8,6 +8,11 @@ import { useAuth } from '../../context/AuthContext';
 function Main() {
   const { isLogin } = useAuth();
 
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <div className="flex flex-col w-screen h-screen justify-center items-center">
       <div className="flex flex-col items-center gap-[38px]">
@@ -20,6 +25,7 @@ function Main() {
               <CustomButton label />
               <CustomButton />
             </div>
+            <button onClick={handleLogout}>로그아웃</button>
           </>
         ) : (
           <NonLoginComponent />

@@ -29,13 +29,6 @@ function ChattingInput() {
       console.log(input.value);
 
       const chattingResponse = await fetchChattingAnswer(input.value);
-      // const chattingResponse = {
-      //   responseDto: {
-      //     chattingAnswer: 'fuck',
-      //   },
-      //   error: null,
-      //   success: true,
-      // };
 
       const messageAnswer = {
         messageId: Date.now() + 1,
